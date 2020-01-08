@@ -8,6 +8,7 @@ export class CartService {
   items = [];
 
   addToCart(product){
+    console.log(product);
     this.items.push(product);
   }
 
@@ -19,6 +20,6 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-  //constructor() { }
+  constructor() { }
 
 }
