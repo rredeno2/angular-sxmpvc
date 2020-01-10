@@ -8,19 +8,24 @@ export class CartService {
   
   items = [];
 
-  addToCart(product){
+  addToCart(product) {
     console.log(product);
     this.items.push(product);
   }
 
-  getItems(){
+  getItems() {
     return this.items;
   }
 
-  clearCart(){
+  clearCart() {
     this.items = [];
     return this.items;
   }
+
+  getShippingPrices() {
+    return this.http.get('/assets/shipping.json');
+  }
+
   constructor(
     private http: HttpClient
   ) { }
